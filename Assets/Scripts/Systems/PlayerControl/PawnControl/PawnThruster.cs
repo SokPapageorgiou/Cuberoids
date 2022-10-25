@@ -13,7 +13,8 @@ namespace Systems.PlayerControl.PawnControl
             if (_throttle > 0) _thrustable?.Accelerate(_throttle);
         }
 
-        public void UpdatePawn(Rigidbody2D pawn) => _thrustable = pawn.GetComponent(typeof(IThrustable)) as IThrustable;
+        public void UpdatePawn(Rigidbody2D pawn) 
+            => _thrustable = pawn.GetComponent(typeof(IThrustable)) as IThrustable;
         
         public void UpdateThrottle(float newThrottle) => _throttle = newThrottle;
     }
