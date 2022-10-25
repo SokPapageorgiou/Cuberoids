@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PlayerInput
+namespace Systems.PlayerControl.PlayerInput
 {
     public class ThrustInput : MonoBehaviour
     {
