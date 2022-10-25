@@ -10,7 +10,7 @@ namespace Systems.PlayerControl.PawnControl
         private float _direction;
 
         private void FixedUpdate() => _rotetable?.Rotate(_direction);
-
+        
         public void UpdatePawn(Rigidbody2D pawn) 
             => _rotetable = pawn.GetComponent(typeof(IRotetable)) as IRotetable;
         
