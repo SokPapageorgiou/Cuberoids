@@ -11,10 +11,10 @@ namespace PlayerInput
         
         private void Update()
         {
-            _inputValue = UpdateThrust();
+            _inputValue = UpdateInput();
             if (_inputValue > 0) onThrustInputUpdates.Invoke(_inputValue);
         }
 
-        private float UpdateThrust() => Input.GetAxis("Vertical");
+        private float UpdateInput() => Input.GetAxis("Vertical");
     }
 }
