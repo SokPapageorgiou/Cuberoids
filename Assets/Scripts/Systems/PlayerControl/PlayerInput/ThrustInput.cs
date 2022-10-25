@@ -9,12 +9,6 @@ namespace Systems.PlayerControl.PlayerInput
 
         private float _inputValue;
         
-        private void Update()
-        {
-            _inputValue = UpdateInput();
-            if (_inputValue >= 0) onThrustInputUpdates.Invoke(_inputValue);
-        }
-
-        private float UpdateInput() => Input.GetAxis("Vertical");
+        private void Update() => onThrustInputUpdates.Invoke(Input.GetAxis("Vertical"));
     }
 }

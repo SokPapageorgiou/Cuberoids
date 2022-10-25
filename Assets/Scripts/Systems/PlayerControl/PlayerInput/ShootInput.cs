@@ -13,7 +13,7 @@ namespace Systems.PlayerControl.PlayerInput
         
         private void Update()
         {
-            _inputValue = UpdateInput();
+            _inputValue = Input.GetKey(keyCode);
             
             if (_currentValue != _inputValue)
             {
@@ -21,7 +21,5 @@ namespace Systems.PlayerControl.PlayerInput
                 _currentValue = _inputValue;
             }
         }
-
-        private bool UpdateInput() => Input.GetKey(keyCode);
     }
 }
