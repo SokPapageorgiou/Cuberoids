@@ -7,7 +7,7 @@ namespace Systems.ObjectPool
     {
         [SerializeField] private CatalogEntry[] catalog;
         
-        private Dictionary<PoolEntry, Queue<GameObject>> _dictionary;
+        private Dictionary<PoolEntry, Queue<GameObject>> _dictionary = new ();
 
         private void Awake()
         {
@@ -15,18 +15,24 @@ namespace Systems.ObjectPool
                 FillEntry(item.entry, item.instance, item.amount);
         }
 
-        private void FillEntry(PoolEntry entry, GameObject gameObject, int amount)
+        private void FillEntry(PoolEntry entry, GameObject instance, int amount)
         {
             var queue = new Queue<GameObject>();
-            for (int i = 0; i < amount; i++) queue.Enqueue(gameObject);
+            
+            for (int i = 0; i < amount; i++)
+            {
+                var temp = Instantiate(instance, this.transform);
+                temp.SetActive(false);
+                queue.Enqueue(temp);
+            }
             
             _dictionary.Add(entry, queue);
         }
 
         public GameObject GetInstance(PoolEntry entry)
         {
-            var gameObject = _dictionary[entry].Dequeue();
-            _dictionary[entry].Enqueue(gameObject);
+            var instance = _dictionary[entry].Dequeue();
+            _dictionary[entry].Enqueue(instance);
 
             return gameObject;
         }
