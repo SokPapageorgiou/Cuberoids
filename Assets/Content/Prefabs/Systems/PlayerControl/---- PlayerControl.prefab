@@ -50,14 +50,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
       propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
       propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 8390281225137974967}
     - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
+      propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 306479894529902665}
+    - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
       propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
+      propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
@@ -65,11 +73,23 @@ PrefabInstance:
       value: UpdatePawn
       objectReference: {fileID: 0}
     - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
+      propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UpdatePawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
       propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Systems.PlayerControl.PawnControl.PawnRotator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
+      propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Systems.PlayerControl.PawnControl.PawnShooter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
       propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390281225825272738, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
+      propertyPath: onPawnChanges.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8390281225825272739, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
@@ -133,6 +153,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b8a8fa882b6ce742b5537cee25b8917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &306479894529902665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5366574489045184349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f09b471a64498b967e7d65fa1f447e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &5366574489045184350 stripped
@@ -233,6 +265,34 @@ PrefabInstance:
     - target: {fileID: 3697242470212187059, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
       propertyPath: m_Name
       value: UserInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110130825225182998, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
+      propertyPath: onShootInputUpdates.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110130825225182998, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
+      propertyPath: onShootInputUpdates.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110130825225182998, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
+      propertyPath: onShootInputUpdates.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 306479894529902665}
+    - target: {fileID: 7110130825225182998, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
+      propertyPath: onShootInputUpdates.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110130825225182998, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
+      propertyPath: onShootInputUpdates.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110130825225182998, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
+      propertyPath: onShootInputUpdates.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Systems.PlayerControl.PawnControl.PawnShooter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110130825225182998, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}
+      propertyPath: onShootInputUpdates.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b06cedf32e3ae544967a90945cc4333, type: 3}

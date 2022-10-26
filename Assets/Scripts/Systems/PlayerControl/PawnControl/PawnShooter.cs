@@ -16,6 +16,6 @@ namespace Systems.PlayerControl.PawnControl
         public void UpdatePawn(Rigidbody2D pawn) 
             => _shootable = pawn.GetComponent(typeof(IShootable)) as IShootable;
         
-        private bool InvertTrigger() => _isTriggerPulled = !_isTriggerPulled;
+        public void UpdateTrigger() => _isTriggerPulled = !_isTriggerPulled;
     }
 }
