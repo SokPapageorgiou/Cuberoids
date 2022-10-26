@@ -13,11 +13,7 @@ namespace Characters.SpaceShip
 
         private void Awake() => _pool = FindObjectOfType<Pool>();
         
-
-        public void Fire()
-        {
-            _pool.GetInstance(PoolEntry.Bullet);
-            Debug.Log("Spaceship is shooting!");
-        }
+        public void Fire() => _pool.GetInstance(PoolEntry.Bullet);
+        
     }
 }
