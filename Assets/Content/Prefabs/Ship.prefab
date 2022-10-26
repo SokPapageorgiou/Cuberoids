@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 240206528743058430}
   - component: {fileID: 7438261293013216294}
   - component: {fileID: 6223316449607324440}
+  - component: {fileID: 1573610882}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -81,6 +82,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1573610882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240206528743058177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b93e946110fb94183a6f7ab2baf972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throttleMagnifier: 1
+  maxSpeed: 10
 --- !u!1 &240206530017480648
 GameObject:
   m_ObjectHideFlags: 0
