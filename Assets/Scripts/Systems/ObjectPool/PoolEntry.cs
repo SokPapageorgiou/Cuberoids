@@ -1,6 +1,6 @@
 namespace Systems.ObjectPool
 {
-    public enum PoolLibraryEntry 
+    public enum PoolEntry 
     {
         Bullet,
         Asteroid
