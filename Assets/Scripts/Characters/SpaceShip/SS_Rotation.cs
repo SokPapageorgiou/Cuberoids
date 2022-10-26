@@ -13,6 +13,6 @@ namespace Characters.SpaceShip
 
         private void Awake() => _rigidbody2D = GetComponent<Rigidbody2D>();
 
-        public void Rotate(float userInput) => _rigidbody2D.rotation += magnifier * userInput;
+        public void Rotate(float userInput) => _rigidbody2D.rotation -= magnifier * userInput;
     }
 }
