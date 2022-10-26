@@ -16,7 +16,7 @@ namespace Characters.SpaceShip
         
         public void Accelerate(float playerInput)
         {
-            _rigidbody2D.AddForce(Vector2.up * (throttleMagnifier * playerInput));
+            _rigidbody2D.AddRelativeForce(Vector2.up * (throttleMagnifier * playerInput));
             
             _rigidbody2D.velocity = Vector2.ClampMagnitude(_rigidbody2D.velocity, maxSpeed);
         }
