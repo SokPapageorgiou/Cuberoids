@@ -33,8 +33,9 @@ namespace Systems.ObjectPool
         {
             var instance = _dictionary[entry].Dequeue();
             _dictionary[entry].Enqueue(instance);
+            instance.SetActive(true);
 
-            return gameObject;
+            return instance;
         }
     }
 }
