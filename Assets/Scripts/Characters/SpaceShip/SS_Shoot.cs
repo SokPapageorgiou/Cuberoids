@@ -1,8 +1,7 @@
-using System.Numerics;
+using System.Collections;
 using Systems.ObjectPool;
 using Systems.PlayerControl.PawnControl.Interfaces;
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
 
 namespace Characters.SpaceShip
 {
@@ -12,14 +11,33 @@ namespace Characters.SpaceShip
         [SerializeField] private Transform gun;
        
         private Pool _pool;
+        private bool _isTriggerPulledBuffer;
 
         private void Awake() => _pool = FindObjectOfType<Pool>();
 
-        public void Fire()
+        public void Fire(bool isTriggerPulled)
         {
-           var bullet= _pool.GetInstance(PoolEntry.Bullet);
-
-           bullet.transform.position = gun.position;
+            if (isTriggerPulled && !_isTriggerPulledBuffer)
+            {
+                StartCoroutine(Shoot());
+                InvertIsTriggerPulledBuffer();
+            }
+            else if (!isTriggerPulled && _isTriggerPulledBuffer)
+            {
+                InvertIsTriggerPulledBuffer();
+            }
         }
+
+        private IEnumerator Shoot()
+        {
+            var bullet= _pool.GetInstance(PoolEntry.Bullet);
+            bullet.transform.position = gun.position;
+            
+            yield return new WaitForSeconds(1 / shotsPerSecond);
+
+            if(_isTriggerPulledBuffer) StartCoroutine(Shoot());
+        }
+
+        private void InvertIsTriggerPulledBuffer() => _isTriggerPulledBuffer = !_isTriggerPulledBuffer;
     }
 }

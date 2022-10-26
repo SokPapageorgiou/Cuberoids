@@ -2,6 +2,6 @@
 {
     public interface IShootable
     {
-        public void Fire();
+        public void Fire(bool isTriggerPulled);
     }
 }

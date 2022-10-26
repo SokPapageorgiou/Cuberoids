@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dfe1f98af0c0e4fa73ff3e3e9cf647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsPerSecond: 1
+  shotsPerSecond: 5
   gun: {fileID: 585485646}
 --- !u!1 &240206530017480648
 GameObject:
