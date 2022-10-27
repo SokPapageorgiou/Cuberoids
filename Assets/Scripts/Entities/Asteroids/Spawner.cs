@@ -11,6 +11,7 @@ namespace Entities.Asteroids
         [SerializeField] private float maxForceMagnitude;
         [SerializeField] private float maxAngularSpeed;
         [SerializeField] private float minScale;
+        [SerializeField] private float scale;
 
         [Header("Spawn area")] 
         [SerializeField] private float width;
@@ -47,9 +48,9 @@ namespace Entities.Asteroids
             var instance = _pool.GetInstance(PoolEntry.Asteroid);
             
             instance.transform.position = disabled.position;
-            instance.transform.localScale = disabled.localScale / 2;
-            instance.AddRelativeForce(_randomizer.SetRandomVector2(maxForceMagnitude));
-            instance.angularVelocity = _randomizer.SetRandomAngularVelocity(maxAngularSpeed);
+            instance.transform.localScale = disabled.localScale / scale;
+            instance.AddRelativeForce(_randomizer.SetRandomVector2(maxForceMagnitude * scale));
+            instance.angularVelocity = _randomizer.SetRandomAngularVelocity(maxAngularSpeed * scale);
         }
 
         private void SummonPair(Transform disabled)

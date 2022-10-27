@@ -48,6 +48,7 @@ MonoBehaviour:
   maxForceMagnitude: 100
   maxAngularSpeed: 100
   minScale: 0.2
+  scale: 1.5
   width: 8
   height: 4
   distanceFromCenter: 1
