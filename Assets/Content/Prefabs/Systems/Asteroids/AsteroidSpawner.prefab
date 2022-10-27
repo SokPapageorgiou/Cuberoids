@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb39ff3f1f60a345968d25d07a8fdcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOnStart: 3
+  amountOnStart: 5
   maxForceMagnitude: 100
   maxAngularSpeed: 100
   minScale: 0.2
