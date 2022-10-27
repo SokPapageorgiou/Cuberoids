@@ -1,8 +1,7 @@
-using System;
 using Systems.PlayerControl.PawnControl.Interfaces;
 using UnityEngine;
 
-namespace Characters.SpaceShip
+namespace Entities.SpaceShip
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class SS_Rotation : MonoBehaviour, IRotetable

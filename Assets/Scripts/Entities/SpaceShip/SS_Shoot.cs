@@ -3,7 +3,7 @@ using Systems.ObjectPool;
 using Systems.PlayerControl.PawnControl.Interfaces;
 using UnityEngine;
 
-namespace Characters.SpaceShip
+namespace Entities.SpaceShip
 {
     public class SS_Shoot : MonoBehaviour , IShootable
     {
@@ -23,15 +23,17 @@ namespace Characters.SpaceShip
                 InvertIsTriggerPulledBuffer();
             }
             else if (!isTriggerPulled && _isTriggerPulledBuffer)
-            {
                 InvertIsTriggerPulledBuffer();
-            }
         }
 
         private IEnumerator Shoot()
         {
             var bullet= _pool.GetInstance(PoolEntry.Bullet);
+            
             bullet.transform.position = gun.position;
+            bullet.transform.rotation = transform.rotation;
+            
+            Debug.Log( bullet.transform.rotation);
             
             yield return new WaitForSeconds(1 / shotsPerSecond);
 
