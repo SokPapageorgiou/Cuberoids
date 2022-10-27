@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8595664008220338058}
   - component: {fileID: 8595664008220338071}
   - component: {fileID: 8595664008220338056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cuberoid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
