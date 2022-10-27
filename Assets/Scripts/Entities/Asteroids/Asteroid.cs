@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Entities.Asteroids
 {
+    [RequireComponent(typeof(BoxCollider2D))]
     public class Asteroid : MonoBehaviour
     {
         [SerializeField] private SO_UnityEvent onAsteroidDisables;
