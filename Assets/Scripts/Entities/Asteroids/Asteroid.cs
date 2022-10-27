@@ -1,4 +1,3 @@
-using System;
 using Entities.Utilities;
 using UnityEngine;
 
@@ -8,6 +7,8 @@ namespace Entities.Asteroids
     {
         [SerializeField] private SO_UnityEvent onAsteroidDisables;
 
+        private void OnCollisionEnter2D(Collision2D col) => this.gameObject.SetActive(false);
+        
         private void OnDisable() => onAsteroidDisables.Invoke(transform);
     }
 }

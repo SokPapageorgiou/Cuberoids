@@ -1,3 +1,4 @@
+using Entities.Utilities;
 using Systems.ObjectPool;
 using UnityEngine;
 
@@ -5,15 +6,19 @@ namespace Entities.Asteroids
 {
     public class Spawner : MonoBehaviour
     {
-        [Header("Initial Status")]
+        [Header("Asteroid Status")]
         [SerializeField] private byte amountOnStart;
         [SerializeField] private float maxForceMagnitude;
         [SerializeField] private float maxAngularSpeed;
+        [SerializeField] private float minScale;
 
         [Header("Spawn area")] 
         [SerializeField] private float width;
         [SerializeField] private float height;
         [SerializeField] private float distanceFromCenter;
+
+        [Header("Dependencies")] 
+        [SerializeField] private SO_UnityEvent onAsteroidDisables;
 
         private Pool _pool;
         private readonly StatusRandomizer _randomizer = new();
@@ -22,12 +27,36 @@ namespace Entities.Asteroids
 
         private void Start()
         {
-            for (int i = 0; i < amountOnStart; i++)
+            onAsteroidDisables.Subscribe(SummonPair);
+            for (int i = 0; i < amountOnStart; i++) SummonInstance();
+        }
+
+        private void OnDestroy() => onAsteroidDisables.Unsubscribe(SummonPair);
+        
+        private void SummonInstance()
+        {
+            var instance = _pool.GetInstance(PoolEntry.Asteroid);
+            
+            instance.transform.position = _randomizer.SetRandomLocation(distanceFromCenter, width, height);
+            instance.AddRelativeForce(_randomizer.SetRandomVector2(maxForceMagnitude));
+            instance.angularVelocity = _randomizer.SetRandomAngularVelocity(maxAngularSpeed);
+        }
+
+        private void SummonInstance(Transform disabled)
+        {
+            var instance = _pool.GetInstance(PoolEntry.Asteroid);
+            
+            instance.transform.position = disabled.position;
+            instance.transform.localScale = disabled.localScale / 2;
+            instance.AddRelativeForce(_randomizer.SetRandomVector2(maxForceMagnitude));
+            instance.angularVelocity = _randomizer.SetRandomAngularVelocity(maxAngularSpeed);
+        }
+
+        private void SummonPair(Transform disabled)
+        {
+            if (disabled.localScale.x > minScale)
             {
-                var instance = _pool.GetInstance(PoolEntry.Asteroid);
-                instance.transform.position = _randomizer.SetRandomLocation(distanceFromCenter, width, height);
-                instance.AddRelativeForce(_randomizer.SetRandomVector2(maxForceMagnitude));
-                instance.angularVelocity = _randomizer.SetRandomAngularVelocity(maxAngularSpeed);
+                for (int i = 0; i < 2; i++) SummonInstance(disabled);
             }
         }
     }
