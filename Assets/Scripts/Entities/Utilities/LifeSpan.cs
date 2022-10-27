@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ namespace Entities.Utilities
     {
         [SerializeField] private float seconds;
 
-        void Start() => StartCoroutine(Disable());
-
+        private void OnEnable() => StartCoroutine(Disable());
+        
         private IEnumerator Disable()
         {
             yield return new WaitForSeconds(seconds);
