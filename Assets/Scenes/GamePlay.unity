@@ -373,6 +373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 240206528743058177, guid: 57fa06915761826468d4adb284ad9189, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 240206528743058430, guid: 57fa06915761826468d4adb284ad9189, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -417,7 +421,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6285011253308028428, guid: 57fa06915761826468d4adb284ad9189, type: 3}
+      propertyPath: waitSeconds
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6285011253308028428, guid: 57fa06915761826468d4adb284ad9189, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57fa06915761826468d4adb284ad9189, type: 3}
 --- !u!1001 &3513940892351771250
 PrefabInstance:

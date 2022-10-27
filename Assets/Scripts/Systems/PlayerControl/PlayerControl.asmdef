@@ -1,3 +1,4 @@
 {
-	"name": "PlayerControl"
+	"name": "PlayerControl",
+	"references":[ "GUID:5136eac32e81bd049ba10a0ba5510606" ]
 }

@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8390281225825272739}
   - component: {fileID: 8390281225825272738}
   - component: {fileID: 7946548299086502582}
+  - component: {fileID: 306479894529902665}
+  - component: {fileID: 8390281225137974967}
+  - component: {fileID: 3287914638242894773}
   m_Layer: 0
   m_Name: PawnControl
   m_TagString: Untagged
@@ -62,6 +65,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8390281225137974967}
+        m_TargetAssemblyTypeName: Systems.PlayerControl.PawnControl.PawnRotator,
+          Assembly-CSharp
+        m_MethodName: UpdatePawn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 306479894529902665}
+        m_TargetAssemblyTypeName: Systems.PlayerControl.PawnControl.PawnShooter,
+          Assembly-CSharp
+        m_MethodName: UpdatePawn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7946548299086502582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,5 +101,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 179b4fba807ec5747ad237491a1ac441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &306479894529902665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390281225825272736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f09b471a64498b967e7d65fa1f447e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8390281225137974967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390281225825272736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8a8fa882b6ce742b5537cee25b8917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3287914638242894773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390281225825272736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346573032cdd2dc4295733045e5dca83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
