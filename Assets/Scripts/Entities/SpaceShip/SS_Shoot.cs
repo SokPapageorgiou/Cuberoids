@@ -30,8 +30,13 @@ namespace Entities.SpaceShip
         {
             var bullet= _pool.GetInstance(PoolEntry.Bullet);
             
+            bullet.velocity = Vector2.zero;
+            
             bullet.transform.position = gun.position;
-            bullet.transform.rotation = transform.rotation;
+            
+            var forceDirection = gun.position - transform.position;
+            
+            bullet.AddRelativeForce(forceDirection.normalized * 300);
             
             Debug.Log( bullet.transform.rotation);
             
