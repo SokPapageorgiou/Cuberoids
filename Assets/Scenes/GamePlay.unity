@@ -434,6 +434,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1617865300}
     m_Modifications:
+    - target: {fileID: 3513940892161203020, guid: 1ed922402f1a7e241ae02ab3eaa13a2d, type: 3}
+      propertyPath: maxAngularSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513940892161203020, guid: 1ed922402f1a7e241ae02ab3eaa13a2d, type: 3}
+      propertyPath: maxForceMagnitude
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3513940892161203022, guid: 1ed922402f1a7e241ae02ab3eaa13a2d, type: 3}
       propertyPath: m_Name
       value: AsteroidSpawner

@@ -1,15 +1,15 @@
-using System;
 using Systems.ObjectPool;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Entities.Asteroids
 {
     public class Spawner : MonoBehaviour
     {
+        [Header("Initial Status")]
         [SerializeField] private byte amountOnStart;
-        [SerializeField] private float maxInitialForceMagnitude;
+        [SerializeField] private float maxForceMagnitude;
+        [SerializeField] private float maxAngularSpeed;
 
         [Header("Spawn area")] 
         [SerializeField] private float width;
@@ -26,6 +26,8 @@ namespace Entities.Asteroids
             {
                 var instance = _pool.GetInstance(PoolEntry.Asteroid);
                 instance.transform.position = SetRandomLocation();
+                instance.AddRelativeForce(SetRandomVector2());
+                instance.angularVelocity = SetRandomAngularVelocity();
             }
         }
 
@@ -46,5 +48,17 @@ namespace Entities.Asteroids
             return number;
         }
 
+        private Vector2 SetRandomVector2()
+        {
+            float x = SetRandomNormalized();
+            float y = SetRandomNormalized();
+            
+            float magnitude = Random.Range(0, maxForceMagnitude);
+            
+            return new Vector2(x,y).normalized * magnitude;
+        }
+
+        private float SetRandomNormalized() => Random.Range(-1, 1);
+        private float SetRandomAngularVelocity() => SetRandomNormalized() * maxAngularSpeed;
     }
 }
