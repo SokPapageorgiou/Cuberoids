@@ -6,7 +6,7 @@ namespace Systems.ObjectPool
     public class CatalogEntry : ScriptableObject
     {
         public PoolEntry entry;
-        public GameObject instance;
+        public Rigidbody2D instance;
         public int amount;
     }
 }

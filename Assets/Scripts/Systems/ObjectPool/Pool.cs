@@ -7,7 +7,7 @@ namespace Systems.ObjectPool
     {
         [SerializeField] private CatalogEntry[] catalog;
         
-        private Dictionary<PoolEntry, Queue<GameObject>> _dictionary = new ();
+        private Dictionary<PoolEntry, Queue<Rigidbody2D>> _dictionary = new ();
 
         private void Awake()
         {
@@ -15,25 +15,25 @@ namespace Systems.ObjectPool
                 FillEntry(item.entry, item.instance, item.amount);
         }
 
-        private void FillEntry(PoolEntry entry, GameObject instance, int amount)
+        private void FillEntry(PoolEntry entry, Rigidbody2D instance, int amount)
         {
-            var queue = new Queue<GameObject>();
+            var queue = new Queue<Rigidbody2D>();
             
             for (int i = 0; i < amount; i++)
             {
                 var temp = Instantiate(instance, this.transform);
-                temp.SetActive(false);
-                queue.Enqueue(temp);
+                temp.gameObject.SetActive(false);
+                queue.Enqueue(temp.GetComponent<Rigidbody2D>());
             }
             
             _dictionary.Add(entry, queue);
         }
 
-        public GameObject GetInstance(PoolEntry entry)
+        public Rigidbody2D GetInstance(PoolEntry entry)
         {
             var instance = _dictionary[entry].Dequeue();
             _dictionary[entry].Enqueue(instance);
-            instance.SetActive(true);
+            instance.gameObject.SetActive(true);
 
             return instance;
         }
