@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOnStart: 3
-  maxInitialForceMagnitude: 100
+  maxForceMagnitude: 100
+  maxAngularSpeed: 100
   width: 8
   height: 4
-  distanceToCenter: 1
+  distanceFromCenter: 1

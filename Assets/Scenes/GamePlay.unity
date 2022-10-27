@@ -258,14 +258,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 161215854}
     m_Modifications:
-    - target: {fileID: 551280462778895729, guid: 5e23c32620621fe4fadf024ce723044f, type: 3}
-      propertyPath: m_Size.x
-      value: 17.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 551280462778895729, guid: 5e23c32620621fe4fadf024ce723044f, type: 3}
-      propertyPath: m_Size.y
-      value: 9.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3613400862104637005, guid: 5e23c32620621fe4fadf024ce723044f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -434,14 +426,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1617865300}
     m_Modifications:
-    - target: {fileID: 3513940892161203020, guid: 1ed922402f1a7e241ae02ab3eaa13a2d, type: 3}
-      propertyPath: maxAngularSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3513940892161203020, guid: 1ed922402f1a7e241ae02ab3eaa13a2d, type: 3}
-      propertyPath: maxForceMagnitude
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3513940892161203022, guid: 1ed922402f1a7e241ae02ab3eaa13a2d, type: 3}
       propertyPath: m_Name
       value: AsteroidSpawner
