@@ -40,6 +40,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5366574490314267257}
     m_Modifications:
+    - target: {fileID: 3287914638242894773, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
+      propertyPath: waitSeconds
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287914638242894773, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
+      propertyPath: onPlayerGetHit
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e0decee8c781234395ff6d157583c8d, type: 2}
     - target: {fileID: 8390281225825272736, guid: e7469763ab3680941a53bbb2e39231ae, type: 3}
       propertyPath: m_Name
       value: PawnControl

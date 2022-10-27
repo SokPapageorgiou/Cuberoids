@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1573610882}
   - component: {fileID: 8116519403499237866}
   - component: {fileID: 2833312551851522104}
+  - component: {fileID: 5235891996491893429}
   m_Layer: 3
   m_Name: Ship
   m_TagString: Player
@@ -158,6 +159,19 @@ MonoBehaviour:
   speed: 350
   shotsPerSecond: 5
   gun: {fileID: 585485646}
+--- !u!114 &5235891996491893429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240206528743058177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3949ff0e7bf85644ab0e5486a53d0cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGetHit: {fileID: 11400000, guid: 1e0decee8c781234395ff6d157583c8d, type: 2}
 --- !u!1 &240206530017480648
 GameObject:
   m_ObjectHideFlags: 0

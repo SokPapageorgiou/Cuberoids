@@ -7,14 +7,14 @@ namespace Systems.PlayerControl.PawnControl
 {
     public class PawRespawner : MonoBehaviour, IPawnWatcher
     {
-        [SerializeField] private SO_UnityEvent onPawnGotHit;
+        [SerializeField] private SO_UnityEvent onPlayerGetHit;
         [SerializeField] private Vector3 origin;
         [SerializeField] private float waitSeconds;
         
         private Rigidbody2D _rigidbody2D;
 
-        private void Start() => onPawnGotHit.Subscribe(Respawn);
-        private void OnDestroy() => onPawnGotHit.Unsubscribe(Respawn);
+        private void Start() => onPlayerGetHit.Subscribe(Respawn);
+        private void OnDestroy() => onPlayerGetHit.Unsubscribe(Respawn);
         
         public void UpdatePawn(Rigidbody2D pawn) => _rigidbody2D = pawn;
 
