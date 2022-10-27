@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BulletEntry
   m_EditorClassIdentifier: 
   entry: 0
-  instance: {fileID: 3188912592209575061, guid: c48488bbeacbe0a458c228066194cd21, type: 3}
+  instance: {fileID: 7851363808437655419, guid: c48488bbeacbe0a458c228066194cd21, type: 3}
   amount: 20
