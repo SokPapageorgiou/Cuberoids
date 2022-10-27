@@ -7,7 +7,11 @@ namespace Entities.SpaceShip
 {
     public class SS_Shoot : MonoBehaviour , IShootable
     {
+        [Header("Bullet")] 
+        [SerializeField] private float speed;
         [SerializeField] private float shotsPerSecond;
+        
+        [Header("Dependencies")]
         [SerializeField] private Transform gun;
        
         private Pool _pool;
@@ -29,16 +33,12 @@ namespace Entities.SpaceShip
         private IEnumerator Shoot()
         {
             var bullet= _pool.GetInstance(PoolEntry.Bullet);
-            
-            bullet.velocity = Vector2.zero;
-            
+
             bullet.transform.position = gun.position;
-            
+
+            bullet.velocity = Vector2.zero;
             var forceDirection = gun.position - transform.position;
-            
-            bullet.AddRelativeForce(forceDirection.normalized * 300);
-            
-            Debug.Log( bullet.transform.rotation);
+            bullet.AddRelativeForce(forceDirection.normalized * speed);
             
             yield return new WaitForSeconds(1 / shotsPerSecond);
 
